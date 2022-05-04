@@ -1,0 +1,21 @@
+{
+	"title": "EGS fix spawnmenu - (Entity Group Spawner)",
+	"type": "tool",
+	"tags": [
+		"build",
+		"fun"
+	],
+	"ignore": [
+		"*.psd*",
+		"*.vcproj*",
+		"*.svn*",
+		"*.git*",
+		"*LICENSE*",
+		"*.md*",
+		"*.code-workspace*",
+		"README.md",
+		".git*",
+		".vscode*",
+		"version.txt"
+	]
+}
