@@ -38,7 +38,7 @@ local function CheckInstalledPropLauncher()
 		or file.Exists('weapons/prop_launcher.lua', 'LUA')
 end
 
-hook.Add('PostSlibSpawnmenuAddContentType', 'EntityGroupSpawnerFixer',
+hook.Add('slib.PostSpawnmenuAddContentType', 'EntityGroupSpawnerFixer',
 function(name, icon, container, obj)
 	if not slib.GetAddon('951638840') then return end
 
@@ -88,15 +88,15 @@ function(name, icon, container, obj)
 	if egs_ent_type == 4 then
 		icon.OpenMenu = function(self)
 			local hook_id = slib.UUID()
-			hook.Add('SlibCreateDermaMenu', hook_id, function(menu)
-				hook.Remove('SlibCreateDermaMenu', hook_id)
+			hook.Add('slib.CreateDermaMenu', hook_id, function(menu)
+				hook.Remove('slib.CreateDermaMenu', hook_id)
 				if isfunction(self.OpenMenuExtra) then
 					self:OpenMenuExtra(menu)
 				end
 			end)
 
 			BASE_OpenMenu(self)
-			hook.Remove('SlibCreateDermaMenu', hook_id)
+			hook.Remove('slib.CreateDermaMenu', hook_id)
 		end
 	end
 end)
